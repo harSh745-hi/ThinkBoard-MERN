@@ -10,7 +10,7 @@ let ratelimit;
 try{
  ratelimit = new Ratelimit({
     redis:Redis.fromEnv(),
-    limiter:Ratelimit.slidingWindow(10,"20 s"),
+    limiter:Ratelimit.slidingWindow(5,"30 s"),
 })
 }
 catch(error) {
