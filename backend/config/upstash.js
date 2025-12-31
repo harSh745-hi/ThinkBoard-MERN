@@ -5,10 +5,10 @@ import { Redis } from "@upstash/redis";
 import dotenv from "dotenv";
 
 dotenv.config();
-
+let ratelimit;
 // create ratelimiter 
 try{
-const ratelimit = new Ratelimit({
+ ratelimit = new Ratelimit({
     redis:Redis.fromEnv(),
     limiter:Ratelimit.slidingWindow(10,"20 s"),
 })
